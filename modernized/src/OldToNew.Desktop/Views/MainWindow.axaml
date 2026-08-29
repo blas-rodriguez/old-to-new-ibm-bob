@@ -1,0 +1,184 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:OldToNew.Desktop.ViewModels"
+        x:Class="OldToNew.Desktop.Views.MainWindow"
+        x:DataType="vm:MainViewModel"
+        Width="1180"
+        Height="820"
+        MinWidth="980"
+        MinHeight="700"
+        Background="#F3F6FA"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Old to New · Synthetic Interment PoC">
+
+    <Window.Styles>
+        <Style Selector="TextBlock.section-title">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Foreground" Value="#17324D" />
+        </Style>
+        <Style Selector="TextBlock.label">
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Foreground" Value="#425466" />
+            <Setter Property="Margin" Value="0,10,0,4" />
+        </Style>
+        <Style Selector="TextBox">
+            <Setter Property="MinHeight" Value="36" />
+        </Style>
+        <Style Selector="ComboBox">
+            <Setter Property="MinHeight" Value="36" />
+        </Style>
+        <Style Selector="Button.primary">
+            <Setter Property="Background" Value="#146C94" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Padding" Value="20,11" />
+        </Style>
+    </Window.Styles>
+
+    <Grid RowDefinitions="Auto,*">
+        <Border Grid.Row="0" Background="#102A43" Padding="30,22">
+            <Grid ColumnDefinitions="*,Auto">
+                <StackPanel>
+                    <TextBlock Text="OLD TO NEW" Foreground="#7DD3FC" FontSize="13" FontWeight="Bold" />
+                    <TextBlock Text="New Interment · Modernized Workflow"
+                               Foreground="White" FontSize="28" FontWeight="SemiBold" Margin="0,3,0,0" />
+                    <TextBlock Text="WF-004 · BR-060 to BR-064 · Avalonia + SQLite"
+                               Foreground="#C9D8E7" FontSize="14" Margin="0,5,0,0" />
+                </StackPanel>
+                <Border Grid.Column="1" Background="#1D4D6B" CornerRadius="8" Padding="16,10" VerticalAlignment="Center">
+                    <TextBlock Text="SYNTHETIC DATA ONLY" Foreground="#D9F99D" FontWeight="Bold" />
+                </Border>
+            </Grid>
+        </Border>
+
+        <ScrollViewer Grid.Row="1">
+            <Grid Margin="28" ColumnDefinitions="360,*">
+                <StackPanel Grid.Column="0">
+                    <Border Background="White" BorderBrush="#D8E1EA" BorderThickness="1" CornerRadius="10" Padding="20">
+                        <StackPanel>
+                            <TextBlock Classes="section-title" Text="1. Find parcel" />
+                            <TextBlock Text="BR-060 requires an existing parcel code."
+                                       Foreground="#60758A" Margin="0,4,0,12" />
+                            <TextBlock Classes="label" Text="Synthetic parcel code" />
+                            <Grid ColumnDefinitions="*,Auto">
+                                <TextBox Text="{Binding ParcelCode}" PlaceholderText="D010101" />
+                                <Button Grid.Column="1" Margin="10,0,0,0" Padding="16,8"
+                                        Content="Find" Command="{Binding FindParcelCommand}" />
+                            </Grid>
+                            <Border Margin="0,16,0,0" Background="#EDF6FA" CornerRadius="7" Padding="14">
+                                <TextBlock Text="{Binding ParcelSummary}" TextWrapping="Wrap" Foreground="#17324D" />
+                            </Border>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Margin="0,20,0,0" Background="#FFF8E7" BorderBrush="#F1D18A"
+                            BorderThickness="1" CornerRadius="10" Padding="18">
+                        <StackPanel Spacing="7">
+                            <TextBlock Text="Demo scenarios" FontWeight="SemiBold" Foreground="#704B00" />
+                            <TextBlock Text="D010101 · Level 1 / Sublevel 1 → success" TextWrapping="Wrap" />
+                            <TextBlock Text="D010102 · Level 1 / Sublevel 2 → sequential success" TextWrapping="Wrap" />
+                            <TextBlock Text="D020101 · Level 1 / Sublevel 2 → BR-062" TextWrapping="Wrap" />
+                            <TextBlock Text="Repeat an existing level/sublevel → BR-061" TextWrapping="Wrap" />
+                        </StackPanel>
+                    </Border>
+
+                    <Border Margin="0,20,0,0" Background="#EAF7EE" BorderBrush="#B9DFC4"
+                            BorderThickness="1" CornerRadius="10" Padding="18">
+                        <StackPanel>
+                            <TextBlock Text="Result" FontWeight="SemiBold" Foreground="#1D5D35" />
+                            <TextBlock Text="{Binding StatusMessage}" TextWrapping="Wrap" Margin="0,7,0,0" />
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+
+                <Border Grid.Column="1" Margin="24,0,0,0" Background="White" BorderBrush="#D8E1EA"
+                        BorderThickness="1" CornerRadius="10" Padding="24">
+                    <StackPanel>
+                        <TextBlock Classes="section-title" Text="2. Register synthetic interment" />
+                        <TextBlock Text="All fields below contain demo values. No legacy DBF is read or written."
+                                   Foreground="#60758A" Margin="0,4,0,12" />
+
+                        <Grid ColumnDefinitions="*,*">
+                            <StackPanel Margin="0,0,10,0">
+                                <TextBlock Classes="label" Text="Level (BR-064: 1–3)" />
+                                <TextBox Text="{Binding LevelText}" />
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                                <TextBlock Classes="label" Text="Sublevel (BR-064: 1–6)" />
+                                <TextBox Text="{Binding SublevelText}" />
+                            </StackPanel>
+                        </Grid>
+
+                        <Grid ColumnDefinitions="*,*">
+                            <StackPanel Margin="0,0,10,0">
+                                <TextBlock Classes="label" Text="Synthetic deceased name" />
+                                <TextBox Text="{Binding DeceasedName}" />
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                                <TextBlock Classes="label" Text="Synthetic document" />
+                                <TextBox Text="{Binding Document}" />
+                            </StackPanel>
+                        </Grid>
+
+                        <Grid ColumnDefinitions="*,*">
+                            <StackPanel Margin="0,0,10,0">
+                                <TextBlock Classes="label" Text="Date of death" />
+                                <DatePicker SelectedDate="{Binding DateOfDeath}" />
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                                <TextBlock Classes="label" Text="Interment date" />
+                                <DatePicker SelectedDate="{Binding IntermentDate}" />
+                            </StackPanel>
+                        </Grid>
+
+                        <Grid ColumnDefinitions="*,*,*">
+                            <StackPanel Margin="0,0,10,0">
+                                <TextBlock Classes="label" Text="Sex" />
+                                <ComboBox ItemsSource="{Binding SexOptions}" SelectedItem="{Binding Sex}" />
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" Margin="10,0">
+                                <TextBlock Classes="label" Text="Record type" />
+                                <TextBox Text="{Binding RecordType}" />
+                            </StackPanel>
+                            <StackPanel Grid.Column="2" Margin="10,0,0,0">
+                                <TextBlock Classes="label" Text="Service (BR-063)" />
+                                <ComboBox ItemsSource="{Binding ServiceTypeOptions}" SelectedItem="{Binding ServiceType}" />
+                            </StackPanel>
+                        </Grid>
+
+                        <Grid ColumnDefinitions="*,*,*">
+                            <StackPanel Margin="0,0,10,0">
+                                <TextBlock Classes="label" Text="Synthetic act number" />
+                                <TextBox Text="{Binding RecordNumber}" />
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" Margin="10,0">
+                                <TextBlock Classes="label" Text="Synthetic ticket" />
+                                <TextBox Text="{Binding Ticket}" />
+                            </StackPanel>
+                            <StackPanel Grid.Column="2" Margin="10,0,0,0">
+                                <TextBlock Classes="label" Text="Tax amount" />
+                                <TextBox Text="{Binding TaxAmountText}" />
+                            </StackPanel>
+                        </Grid>
+
+                        <Grid ColumnDefinitions="*,*">
+                            <StackPanel Margin="0,0,10,0">
+                                <TextBlock Classes="label" Text="Funeral home code" />
+                                <TextBox Text="{Binding FuneralHomeCodeText}" />
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                                <TextBlock Classes="label" Text="Coffin code" />
+                                <TextBox Text="{Binding CoffinCodeText}" />
+                            </StackPanel>
+                        </Grid>
+
+                        <Button Classes="primary" HorizontalAlignment="Right" Margin="0,24,0,0"
+                                Content="Validate and create" Command="{Binding CreateIntermentCommand}" />
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Window>

@@ -1,0 +1,10 @@
+# Resguardo local con los datos anteriores: nunca subir ni compartir.
+_resguardo_privado/
+
+# Indices binarios regenerables de Clipper/xBase.
+*.[Nn][Tt][Xx]
+*.[Cc][Dd][Xx]
+
+# Temporales atomicos de la herramienta de saneamiento.
+*.demo.tmp
+*.privacy.tmp
