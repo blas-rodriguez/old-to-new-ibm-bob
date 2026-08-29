@@ -8,3 +8,6 @@ _resguardo_privado/
 # Temporales atomicos de la herramienta de saneamiento.
 *.demo.tmp
 *.privacy.tmp
+
+# Local video drafts for private review: never publish in the repository.
+bob_sessions/_video_review/
