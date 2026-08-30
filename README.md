@@ -161,7 +161,7 @@ Suggested synthetic demo scenarios are displayed in the application:
 - [Submission checklist](bob_result/final/submission-checklist.md)
 - [IBM Bob task/session evidence index](bob_sessions/README.md)
 - [Public demo video](https://youtu.be/AnG2Uk-wbL0)
-- Competition status: **Submission #51 received on 2026-08-29**
+- Competition status: **Submission #53 received on 2026-08-29**
 
 ## Privacy, Safety, and Limitations
 
