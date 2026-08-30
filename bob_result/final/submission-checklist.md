@@ -3,7 +3,7 @@
 **Task ID:** OTN-62  
 **Execution:** Manual post-Bob-budget submission preparation  
 **Date:** 2026-08-29  
-**Status:** SUBMITTED — Submission #53 received on 2026-08-29
+**Status:** SUBMITTED — Submission #53 received; official Bob task exports added on 2026-08-29
 
 ## 1. Submission Fields
 
@@ -77,6 +77,13 @@ dotnet run --project src/OldToNew.Desktop/OldToNew.Desktop.csproj
 
 All 14 current PNG files were visually reviewed on 2026-08-29. No personal email, account identifier, production value, or private Slack content is visible. `DEMO00`, visible in security evidence, is explicitly synthetic.
 
+Three official JSON files produced with IBM Bob's **Export Current Task**
+command were added under `bob_sessions/exports/`. They cover OTN-00/01/01A,
+OTN-10, and OTN-20 through OTN-25. The exports retain their original filenames
+and bytes, parse successfully, and have published SHA-256 hashes in
+`bob_sessions/README.md`. A privacy scan found no personal email, user-profile
+path, IP address, known token format, private key, or account credential.
+
 | Evidence | Present | Privacy reviewed | Purpose |
 |---|---|---|---|
 | `bob_sessions/otn-01-project-initialization.png` | Yes | Yes | Initialization and task setup |
@@ -95,6 +102,7 @@ All 14 current PNG files were visually reviewed on 2026-08-29. No personal email
 | `bob_sessions/manual-otn-50-validation.png` | Yes | Yes | Manual post-budget validation scenario |
 
 - [x] Every Bob-attributed major phase has task/session evidence.
+- [x] Official IBM Bob task exports are indexed and integrity-hashed.
 - [x] The OTN-25 budget interruption is disclosed instead of hidden.
 - [x] Manual screenshots use a `manual-` prefix.
 - [ ] Optionally capture a final public-safe 21/21 terminal result if the video needs clearer test evidence.
@@ -159,7 +167,8 @@ All 14 current PNG files were visually reviewed on 2026-08-29. No personal email
 
 Submission #53 was received by the competition platform on 2026-08-29. The
 public repository, public demo video, written statements, implementation,
-reports, and indexed IBM Bob task/session evidence are available for review.
+reports, official IBM Bob JSON task exports, and indexed task/session evidence
+are available for review.
 An automated beta submission advisor marked the repository for a second look;
 the evidence index was added to make the existing public artifacts directly
 discoverable without changing their attribution.
