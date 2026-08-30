@@ -11,3 +11,7 @@ _resguardo_privado/
 
 # Local video drafts for private review: never publish in the repository.
 bob_sessions/_video_review/
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore

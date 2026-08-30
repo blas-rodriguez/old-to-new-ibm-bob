@@ -54,6 +54,12 @@ tests and an independent read-only comparison.
 | OTN-24 | Maintainability and migration-risk analysis | `bob_result/agents/05-migration-risks.md` |
 | OTN-25 | Consolidation and cross-report conflict review | `bob_result/final/analysis-summary.md` |
 
+Three unmodified JSON files produced by IBM Bob's **Export Current Task**
+command are available through the
+[task/session evidence index](bob_sessions/README.md#official-ibm-bob-task-exports).
+They cover OTN-00/01/01A, OTN-10, and OTN-20 through OTN-25. SHA-256 hashes
+are published alongside the files so their exported contents can be verified.
+
 The official 40-Bobcoin allocation was exhausted during the final OTN-25
 consistency pass. One terminology-only correction and all architecture,
 implementation, testing, independent validation, and submission preparation
