@@ -1,16 +1,35 @@
 # IBM Bob Task and Session Evidence
 
-This directory contains the public-safe task/session captures used to document
-IBM Bob's role in the Old to New modernization workflow. The captures were
-created from the official hackathon-provisioned IBM Bob instance. They show
-task structure, bounded personas, parallel analysis, source-based findings, and
-the point at which the fixed 40-Bobcoin allocation was exhausted.
+This directory contains public-safe official task exports and task/session
+captures used to document IBM Bob's role in the Old to New modernization
+workflow. The evidence was created from the official hackathon-provisioned IBM
+Bob instance. It shows task structure, bounded personas, parallel analysis,
+source-based findings, and the point at which the fixed 40-Bobcoin allocation
+was exhausted.
+
+## Official IBM Bob Task Exports
+
+These JSON files were produced with IBM Bob's **Export Current Task** command.
+Their contents and filenames are unmodified. Each file was parsed successfully
+and reviewed before publication; no personal email, user-profile path, IP
+address, known token format, private key, or account credential was found.
+
+| Scope | Official export | Messages | SHA-256 |
+|---|---|---:|---|
+| OTN-00/01 and OTN-01A — initialization and persona correction | [bob-task-89243e5c420e9e26831b9e38028124f0-2026-08-30.json](exports/bob-task-89243e5c420e9e26831b9e38028124f0-2026-08-30.json) | 71 | `f81423373e60827b716b82168254230527bf7b63d19a739207ff0a25e9842f0b` |
+| OTN-10 — privacy and security gate | [bob-task-ae6da03755d18cd7277fa82210f594d1-2026-08-30.json](exports/bob-task-ae6da03755d18cd7277fa82210f594d1-2026-08-30.json) | 12 | `1d752a2c670cbf0818470b7ca82257985acb5f0f812c67d543bed16e4d0380e8` |
+| OTN-20–25 — parallel legacy analysis, correction passes, and consolidation | [bob-task-254f10636f30ff248fef380b1b46eef6-2026-08-30.json](exports/bob-task-254f10636f30ff248fef380b1b46eef6-2026-08-30.json) | 260 | `5b3f3980ffd212431983e1833965cbc27a98c0fbbec22352cb9cb2d989869a10` |
+
+The OTN-20–25 export ends at the documented Bobcoin budget boundary. Later
+manual work is not represented as an IBM Bob task export.
+
+## Task/Session Captures
 
 The first twelve captures below are IBM Bob task/session evidence. The final
 two files use a `manual-` prefix because they document work completed manually
 after the Bobcoin limit; they are not presented as IBM Bob output.
 
-## IBM Bob Evidence
+### IBM Bob Evidence
 
 | Task or phase | Session capture | Related textual output |
 |---|---|---|
@@ -27,7 +46,7 @@ after the Bobcoin limit; they are not presented as IBM Bob output.
 | OTN-20–24 — final report review | [otn-20-24-final-review.png](otn-20-24-final-review.png) | [Final consolidated reports](../bob_result/final/legacy-system-overview.md) |
 | OTN-25 — budget boundary | [otn-25-budget-exceeded.png](otn-25-budget-exceeded.png) | [Post-budget provenance](../bob_result/logs/manual-phase3-provenance.md) |
 
-## Clearly Labeled Manual Evidence
+### Clearly Labeled Manual Evidence
 
 | Manual phase | Capture | Related textual output |
 |---|---|---|
