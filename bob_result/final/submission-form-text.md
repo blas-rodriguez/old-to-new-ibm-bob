@@ -2,12 +2,12 @@
 
 **Prepared:** 2026-08-29  
 **Language:** English  
-**Status:** Video URL pending
+**Status:** Submitted on 2026-08-29 — Submission #51 received
 
 ## Video Demonstration URL
 
 ```text
-[PASTE THE PUBLICLY ACCESSIBLE VIDEO URL HERE]
+https://youtu.be/AnG2Uk-wbL0
 ```
 
 ## Written Problem and Solution Statement

@@ -8,6 +8,9 @@ The project does **not** claim to migrate the complete legacy application. It
 uses Bob to reconstruct verified behavior and then modernizes exactly one
 user-approved workflow as an offline .NET, Avalonia, and SQLite vertical slice.
 
+[Watch the public three-minute demo](https://youtu.be/AnG2Uk-wbL0) ·
+[Review the IBM Bob task/session evidence](bob_sessions/README.md)
+
 ![IBM Bob parallel legacy analysis](bob_sessions/otn-20-24-parallel-analysis-overview.png)
 
 ## The Problem
@@ -146,7 +149,7 @@ Suggested synthetic demo scenarios are displayed in the application:
 | `bob_result/final/` | Consolidated analysis, architecture, validation, and submission documents |
 | `bob_result/diagrams/` | Legacy and target architecture diagrams |
 | `bob_result/logs/` | Build, test, correction, and provenance records |
-| `bob_sessions/` | IBM Bob task evidence and clearly labeled manual captures |
+| [`bob_sessions/`](bob_sessions/README.md) | Indexed IBM Bob task/session evidence and clearly labeled manual captures |
 | `modernized/` | Runnable .NET/Avalonia/SQLite proof of concept and tests |
 | Root `*.PRG` / `*.DBF` | Read-only sanitized legacy evidence |
 
@@ -156,7 +159,9 @@ Suggested synthetic demo scenarios are displayed in the application:
 - [Three-minute demo script](bob_result/final/demo-script.md)
 - [Submission form text](bob_result/final/submission-form-text.md)
 - [Submission checklist](bob_result/final/submission-checklist.md)
-- Demo video URL: **to be added after publication**
+- [IBM Bob task/session evidence index](bob_sessions/README.md)
+- [Public demo video](https://youtu.be/AnG2Uk-wbL0)
+- Competition status: **Submission #51 received on 2026-08-29**
 
 ## Privacy, Safety, and Limitations
 
